@@ -533,14 +533,14 @@ zookeeper:
   replicaCount: 1
 
   ## Ongoing data directory cleanup configuration
-  autopurge:
+  env:
 
     ## The time interval (in hours) for which the purge task has to be triggered
     ## Set to a positive integer to enable the auto purging
-    purgeInterval: 1
+    ZK_PURGE_INTERVAL: "1"
 
     ## The most recent snapshots amount (and corresponding transaction logs) to retain
-    snapRetainCount: 5
+    ZK_SNAP_RETAIN_COUNT: "5"
 
   ## Size (in MB) for the Java Heap options (Xmx and Xms)
   ## This env var is ignored if Xmx an Xms are configured via `zookeeper.jvmFlags`
